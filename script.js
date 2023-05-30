@@ -19,7 +19,7 @@ function renderCircularWaveform() {
   const height = canvas.height;
   const centerX = width / 2;
   const centerY = height / 2;
-  const radius = Math.min(centerX, centerY) - 40; // Adjust the radius value for a larger circle
+  const radius = Math.min(centerX, centerY) - 240; // Adjust the radius value for a larger circle
 
   canvasContext.clearRect(0, 0, width, height);
 
@@ -42,7 +42,7 @@ function renderCircularWaveform() {
 
     for (let i = 0; i < bufferLength; i++) {
       let angle = (i / bufferLength) * Math.PI * 2;
-      let amplitude = (dataArray[i] / 128.0) * radius;
+      let amplitude = (dataArray[i] / 32.0) * radius;
 
       let x = centerX + Math.cos(angle) * amplitude;
       let y = centerY + Math.sin(angle) * amplitude;
